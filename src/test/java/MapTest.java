@@ -2,10 +2,11 @@ import org.example.Map;
 import org.junit.jupiter.api.Assertions;
 import org.junit.jupiter.api.Test;
 
+
 public class MapTest {
     Map sut = new Map();
     @Test
-    public void putMapTestByArguments_ReturnsNotNull(){
+    public void putByArguments_ReturnsNotNull(){
         sut.put("one", 1);
         Assertions.assertNotNull(sut);
         Assertions.assertEquals(1, sut.get("one"));
@@ -19,7 +20,7 @@ public class MapTest {
     }
 
     @Test
-    public void getSizeTest_ReturnsSize(){
+    public void getSize_ReturnsSize(){
         sut.put("one", 1);
         Assertions.assertEquals(1, sut.size());
     }

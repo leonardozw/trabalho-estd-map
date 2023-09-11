@@ -6,24 +6,20 @@ public class Map<K, V> {
     private int size;
 
     public Map() {
-        head = new Node<>(null, null); // Cabeça vazia
-        tail = new Node<>(null, null); // Cauda vazia
+        head = new Node<>(null, null);
+        tail = new Node<>(null, null);
         head.next = tail;
         tail.prev = head;
         size = 0;
     }
 
     public void put(K key, V value) {
-        // Verifica se a chave já existe no mapa
         Node<K, V> node = getNode(key);
         if (node != null) {
-            // Atualiza o valor se a chave já existir
             node.value = value;
         } else {
-            // Cria um novo nó para o par chave-valor
             Node<K, V> newNode = new Node<>(key, value);
 
-            // Insere o novo nó no final da lista
             newNode.next = tail;
             newNode.prev = tail.prev;
             tail.prev.next = newNode;
@@ -40,7 +36,6 @@ public class Map<K, V> {
     public void remove(K key) {
         Node<K, V> node = getNode(key);
         if (node != null) {
-            // Remove o nó da lista
             node.prev.next = node.next;
             node.next.prev = node.prev;
         }

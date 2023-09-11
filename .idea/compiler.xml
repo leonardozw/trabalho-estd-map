@@ -7,6 +7,7 @@
         <sourceTestOutputDir name="target/generated-test-sources/test-annotations" />
         <outputRelativeToContentRoot value="true" />
         <module name="estd-map" />
+        <module name="trabalho-estd-map" />
       </profile>
     </annotationProcessing>
   </component>
